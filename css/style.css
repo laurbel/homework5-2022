@@ -31,6 +31,11 @@ header{
     flex-direction: column;
 }
 
+/* step 5 -- keeps the links the same color even after visited */
+.nav_item *:visited{
+    color: #0000EE;
+}
+
 /* step 6 -- styling for header elements that are direct children of the card class */
 .card > header{
     display: flex;
