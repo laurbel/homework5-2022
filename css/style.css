@@ -1,8 +1,10 @@
+/* step 2 -- setting the font and background properties for the whole body */
 body{
     font-family: 'Poppins', serif;
     background: url(../images/concrete_seamless.png), #f1f1f1;
 }
 
+/* step 1 -- animation qualities for myanimation */
 @keyframes myanimatioin{
     from {width: 25px;}
     to {width: 475px;}
@@ -10,22 +12,26 @@ body{
     to {opacity: 1;}
 }
 
+/* step 1 -- actually implements the animation written above for 5s*/
 #logo{
     animation-name: myanimatioin;
     animation-duration: 5s;
 }
 
+/* step 3 --  flex header to match the screenshot */
 header{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* step 4 -- flex for the navigation links class to match the screenshot */
 .nav_links{
     display: flex;
     flex-direction: column;
 }
 
+/* step 6 -- styling for header elements that are direct children of the card class */
 .card > header{
     display: flex;
     background-color: #288088;
@@ -35,6 +41,8 @@ header{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
+
+/* step 7 -- styling for the card class to match the screenshot */
 .card{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -43,6 +51,7 @@ header{
     flex-wrap: nowrap;
 }
 
+/* step 8 -- styling for the pricing class to match the screenshot */
 .pricing{
     display: flex;
     flex-direction: row;
@@ -52,12 +61,14 @@ header{
     align-content: center;
 }
 
+/* step 10 -- styling for all images that have the class of gallery */
 .gallery img{
     border: solid 10px #50C7C7;
     margin: 10px;
     width: 300px;
 }
 
+/* step 10 -- flex styling for the gallery class */
 .gallery{
     display: flex;
     flex-direction: row;
@@ -65,43 +76,51 @@ header{
     justify-content: center;
 }
 
+/* media query for larger screen view */
 @media screen and (min-width: 900px){
+
+    /* step 11 -- flex header for links to match the screenshot */
     header{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-
     .nav_links{
         flex-direction: row;
     }
 
+    /* step 12 -- flex set the pricing and card classes to match the screenshot */
     .pricing{
         flex-basis: 275px;
     }
-
     .card{
         flex-basis: 275px;
     }
 
+    /* step 13 -- modifies the header to stay at the top of the page */
     body > header{
         position: sticky;
         top: 0;
     }
 }
 
+/* media query for perfers reduce motion */
 @media screen and (prefers-reduced-motion: reduce) { 
+    /* step 14 -- stops the animation for reduced motion */
     #logo{
         animation: none;
     }
 }
 
+/* media query for printed page */
 @media print{
+    /* steps 15 and 16 -- sets styling */
     body{
         font-family: Arial, Helvetica;
         background: #f1f1f1;
     }
 
+    /* step 17 -- spaces out the navigation links at the top to match the screenshot */
     nav{
         width: 100%;
     }
@@ -111,24 +130,29 @@ header{
         justify-content: space-around;
     }
 
+    /* step 18 -- aligns the flex items */
     .pricing{
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: flex-end
     }
 
+    /* step 19 -- styles the card class */
     .card{
         border: solid 2px #45ADDD;
         flex-basis: 325px;
     }
 
+    /* step 20 -- no part of the gallery should be visible */
     #gallery{
         display: none;
     }
+
     .gallery{
         display:none;
     }
 
+    /* step 21 -- adds an emoji after certain sentances */
     div.card li:nth-child(even)::after{
         content: "👍";
     }
