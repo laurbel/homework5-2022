@@ -123,10 +123,10 @@ header{
     }
 
     #gallery{
-        visibility: hidden;
+        display: none;
     }
     .gallery{
-        visibility: hidden;
+        display:none;
     }
 
     div.card li:nth-child(even)::after{
